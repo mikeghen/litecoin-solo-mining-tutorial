@@ -1,0 +1,16 @@
+[Unit]
+Description=Stratum Server daemon
+After=network.target
+
+[Service]
+WorkingDiretory=/opt/stratum-server
+User=root
+Group=root
+Type=simple
+ExecStart=/home/mike/.nvm/v0.10.25/bin/node /opt/stratum-server/server.js
+Restart=on-failure
+RestartSec=5s
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
