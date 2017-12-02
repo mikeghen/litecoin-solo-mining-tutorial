@@ -2,7 +2,9 @@
 This tutorial provides instructions for setting up a Litecoin Node and a mining pool. For this tutorial, I used an old Gridseed that I have mining on "lottery" mode with Nice hash.
 
 :email: mike@mikeghen.com
+
 :blue_heart: LYQb5ALaKQYufQouRg5Dvig2tBBWvL3MSg
+
 Hit me up if you need any help.
 
 
