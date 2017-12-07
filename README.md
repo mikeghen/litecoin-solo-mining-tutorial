@@ -243,3 +243,15 @@ I also realized that creating my own pool meant I would be adding a node to the 
 
 #### What is socket flooding?
 This means the difficulty is too low for your miner. I experienced this when I was using diff=32 and my A4+ LTCMaster cranks at 620MHs. Bumped the diff to 1024 and the problem went away. If you get socket flooding, you need to adjust your difficulty.
+
+#### Why can I not reach my node on port 3333?
+You probably forgot to open up the port at the VPC level.
+![Firewall](VPC_network_-_Litecoin_Node.png)
+Try using telnet to make sure the port is open:
+```
+telnet EXTERNAL_IP 3333
+```
+Make sure you can ping your instance first:
+```
+ping EXTERNAL_IP
+```
