@@ -3,9 +3,7 @@ This tutorial provides instructions for setting up a Litecoin Node and a mining 
 
 :email: mike@mikeghen.com
 
-:blue_heart: LYQb5ALaKQYufQouRg5Dvig2tBBWvL3MSg
-
-Hit me up if you need any help.
+:electric_plug: Will get you set up and provide support/training for only 5 LTC
 
 
 ## Definitions
@@ -82,7 +80,7 @@ daemon=1
 server=1
 gen=0
 ```
-2. No you can start the Litecoin Daemon:
+2. Now you can start the Litecoin Daemon:
 ```
 bin/litecoind
 ```
