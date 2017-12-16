@@ -3,7 +3,7 @@ Description=Stratum Server daemon
 After=network.target
 
 [Service]
-WorkingDiretory=/opt/stratum-server
+WorkingDirectory=/opt/stratum-server
 User=root
 Group=root
 Type=simple

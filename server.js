@@ -38,7 +38,7 @@ var pool = Stratum.createPool({
     /* Some attackers will create thousands of workers that use up all available socket connections,
        usually the workers are zombies and don't submit shares after connecting. This features
        detects those and disconnects them. */
-    "connectionTimeout": 600, //Remove workers that haven't been in contact for this many seconds
+    "connectionTimeout": 1200, //Remove workers that haven't been in contact for this many seconds
 
     /* Sometimes you want the block hashes even for shares that aren't block candidates. */
     "emitInvalidBlockHashes": false,
@@ -94,7 +94,7 @@ var pool = Stratum.createPool({
             "host": "127.0.0.1",
             "port": 2300,
             "user": "litecoinrpc",
-            "password": "securepasswordforLitecoinNode"
+            "password": "pickASecurePassword"
         }
         // {   //Backup daemon instance
         //     "host": "127.0.0.1",

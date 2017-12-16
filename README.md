@@ -3,7 +3,7 @@ This tutorial provides instructions for setting up a Litecoin Node and a mining 
 
 :email: mike@mikeghen.com
 
-:electric_plug: Will get you set up and provide support/training for only 5 LTC
+:electric_plug: Will get you set up and provide support/training for just 1 LTC!
 
 
 ## Definitions
@@ -21,6 +21,9 @@ Understanding networking will help as well. Since you'll be running a few servic
 You don't need to be a developer but to support this setup and solo mine for a long enough time to actually mine a block, you need system admin skills (might be wise to find a techie friend who can help admin this setup if this is something new to you)
 
 ## Getting Started
+
+:information_source: If you're doing this on AWS or GCP, use a large instance with good network connection then after you finish, dial it down to a smaller instance.
+
 First, begin by setting up a Ubuntu server. You will need to have enough disk space for the blockchain. I'm using these specs on Google Cloud Engine:
 
 * Ubuntu 16.04
@@ -60,15 +63,15 @@ bin/litecoin-cli getinfo
 This will produce the following message:
 ```
 error: Could not locate RPC credentials. No authentication cookie could be found, and no rpcpassword is set in the
-configuration file (/home/mike/.litecoin/litecoin.conf)
+configuration file (/home/ubuntu/.litecoin/litecoin.conf)
 ```
-At this point, you can go ahead and create the configuration file in the path the the Deamon is looking (in my case `/home/mike/.litecoin/litecoin.conf`) or you can choose your only place to put it if your more advanced (maybe `/etc`).
+At this point, you can go ahead and create the configuration file in the path the the Deamon is looking (in my case `/home/ubuntu/.litecoin/litecoin.conf`) or you can choose your only place to put it if your more advanced (maybe `/etc`).
 
 Once you know where you will put your config file, here's how I recommend configuring your daemon:
 
 1. Write the configuration below to `litecoin.conf`. In my case I did this like so:
 ```
-vi /home/mike/.litecoin/litecoin.conf
+vi /home/ubuntu/.litecoin/litecoin.conf
 ```
 Then I insert the configuration code:
 **Sample Litecoin Daemon Configuration**
@@ -114,11 +117,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | b
 ```
 After running `curl` to install NVM, you should see in your output something like:
 ```
-=> Appending nvm source string to /home/mike/.bashrc
+=> Appending nvm source string to /home/ubuntu/.bashrc
 ```
 To use NVM, you'll first need to restart your terminal or reload `.bashrc`:
 ```
-source /home/mike/.bashrc
+source /home/ubuntu/.bashrc
 ```
 We want to use Node.js 0.10 so run:
 ```
@@ -252,4 +255,53 @@ telnet EXTERNAL_IP 3333
 Make sure you can ping your instance first:
 ```
 ping EXTERNAL_IP
+```
+
+#### Why am I getting a connection error?
+I got this when I set this up on AWS:
+```
+Dec 12 00:40:44 ip-172-31-22-159 node[11648]: error: [POOL] Could not start pool, error with init batch RPC call: {"type":"offline","message":"connect ECONNREFUSED"}
+```
+First, check your password and such in `server.js`. After I did that...
+
+I did a `getinfo` to see what's up with Litecoin Daemon:
+```
+$ bin/litecoin-cli getinfo
+error: couldn't connect to server: unknown (code -1)
+(make sure server is running and you are connecting to the correct RPC port)
+```
+I did a quick `netstat -nlp` and saw that the Litecoin Daemon wasn't running. So I started it again:
+```
+bin/litecoind
+```
+and then did `getinfo` and saw this:
+```
+error code: -28
+error message:
+Loading block index...
+```
+I waited 30 seconds and did `getinfo` again and then things looked good.
+
+#### How to I monitor my Stratum Server?
+Since we used systemd, you can use a logging agent. On Google Cloud, you can use stackdriver. On AWS, you can use [Cloud Watch agent](https://devopscube.com/setup-aws-logs-agent-ubuntu-16/).
+
+You'll want to create the follow role for CloudWatch:
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams"
+    ],
+      "Resource": [
+        "arn:aws:logs:*:*:*"
+    ]
+  }
+ ]
+}
 ```
