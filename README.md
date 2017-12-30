@@ -31,7 +31,7 @@ First, begin by setting up a Ubuntu server. You will need to have enough disk sp
 * 2.5 GB memory
 * 100 GB disk
 
-Once you have your server all setup just do an update before we get going:
+:star: Once you have your server all setup just do an update before we get going:
 ```
 sudo apt-get update
 ```
@@ -103,7 +103,7 @@ And look at the output for the `"blocks"`. Run the command again and look at `"b
 ```
 :warning: You will probably want to run Litecoin Daemon on two different servers for high availability. Not going to get into that here. (Email me for more about that.)
 
-:warning: You DO NOT need to wait to download the full block chain to move onto the next steps.
+:information_source: You DO NOT need to wait to download the full block chain to move onto the next steps.
 
 ## Step 3: Creating your Stratum Server (aka Mining Pool)
 Now that we have Litecoin Daemon running, we can setup out Stratum server where we can connect our mining rig and start working.
