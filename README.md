@@ -5,6 +5,8 @@ This tutorial provides instructions for setting up a Litecoin Node and a mining 
 
 :electric_plug: Will get you set up and provide support/training for just 1 LTC!
 
+:pray: LaY9tLS9DmbW5FXpnXYCSjVL3hTB7xyLsQ
+
 
 ## Definitions
 **Litecoin Node:** A server running [Litecoin Core](https://litecoin.org/) that maintains it's own blockchain. Litecoin nodes make up the backbone of the Litecoin network. By running your own node, you serve as a peer in the peer-to-peer network that is Litecoin.
