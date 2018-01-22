@@ -5,7 +5,7 @@ This tutorial provides instructions for setting up a Litecoin Node and a mining 
 
 :electric_plug: Will get you set up and provide support/training for just 1 LTC!
 
-:pray: LaY9tLS9DmbW5FXpnXYCSjVL3hTB7xyLsQ
+:pray: LaY9tLS9DmbW5FXpnXYCSjVL3hTB7xyL
 
 
 ## Definitions
@@ -83,7 +83,7 @@ rpcpassword=pickASecurePassword
 rpcport=2300
 daemon=1
 server=1
-gen=0
+gen=1
 ```
 2. Now you can start the Litecoin Daemon:
 ```
@@ -307,3 +307,24 @@ You'll want to create the follow role for CloudWatch:
  ]
 }
 ```
+
+#### bignum Error
+```
+root@litecoin-node-primary:/opt/stratum-server# node server.js
+module.js:328
+    throw err;
+    ^
+Error: Cannot find module 'bignum'
+    at Function.Module._resolveFilename (module.js:326:15)
+    at Function.Module._load (module.js:277:25)
+    at Module.require (module.js:354:17)
+    at require (internal/module.js:12:17)
+    at Object.<anonymous> (/opt/stratum-server/node_modules/stratum-pool/lib/alg
+oProperties.js:1:76)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Module.require (module.js:354:17)
+```
+Odds are you messed up with `nvm`. Make sure you run Step 3 correctly. You may need to replace `ubuntu` with a different username.
