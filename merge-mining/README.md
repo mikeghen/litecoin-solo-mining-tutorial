@@ -1,7 +1,13 @@
 # Merge Mining on Dogecoin and Litecoin Testnet
 This directory contains information about testing merge mining on the Litecoin and Dogecoin test networks.
 
-I used this as a way to test that merge mining is working with this codebase.
+I used this as a way to test that merge mining is working my codebase.
+
+:email: mike@mikeghen.com
+
+:electric_plug: Will get you set up and provide support/training for just 1 LTC!
+
+:pray: LaY9tLS9DmbW5FXpnXYCSjVL3hTB7xyL
 
 ## Setup Daemons
 The first step involves installing the Daemons on the server.

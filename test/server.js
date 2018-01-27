@@ -2,10 +2,8 @@ var myCoin = {
     "name": "Litecoin",
     "symbol": "LTC",
     "algorithm": "scrypt",
-    /* litecoin mainnet magic: http://git.io/Bi8YFw
-       litecoin testnet magic: http://git.io/NXBYJA */
-     "peerMagic": "fbc0b6db",
-     "peerMagicTestnet": "fcc1b7dc"
+    "peerMagic": "fbc0b6db",
+    "peerMagicTestnet": "fcc1b7dc"
 };
 
 var Stratum = require('stratum-pool');
