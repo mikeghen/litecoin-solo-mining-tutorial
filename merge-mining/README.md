@@ -16,7 +16,7 @@ The first step involves installing the Daemons on the server.
 1. Download and extract Litecoin Core:
 ```
 cd /opt
-wget https://download.litecoin.org/litecoin-0.14.2/linux/litecoin-0.14.2-x86_64-linux-gnu.tar.gz
+wget https://download.litecoin.org/litecoin-0.15.1/linux/litecoin-0.15.1-x86_64-linux-gnu.tar.gz
 tar -xvzf litecoin-0.14.2-x86_64-linux-gnu.tar.gz
 rm -rf litecoin-0.14.2-x86_64-linux-gnu.tar.gz
 cd /opt/litecoin-0.14.2

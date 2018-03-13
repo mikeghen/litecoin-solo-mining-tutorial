@@ -47,7 +47,7 @@ cd /opt
 ```
 2. Get Litecoin Core (double check you're getting the latest, at the time of writing 0.14.2 was the latest):
 ```
-wget https://download.litecoin.org/litecoin-0.14.2/linux/litecoin-0.14.2-x86_64-linux-gnu.tar.gz
+wget https://download.litecoin.org/litecoin-0.15.1/linux/litecoin-0.15.1-x86_64-linux-gnu.tar.gz
 ```
 3. Uncompress Litecoin Core and remove the compressed file:
 ```
