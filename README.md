@@ -5,7 +5,7 @@ This tutorial provides instructions for setting up a Litecoin Node and a mining 
 
 :electric_plug: Will get you set up and provide support/training for just 1 LTC!
 
-:pray: LaY9tLS9DmbW5FXpnXYCSjVL3hTB7xyL
+:pray: LaY9tLS9DmbW5FXpnXYCSjVL3hTB7xyLsQ
 
 
 ## Definitions
@@ -139,12 +139,9 @@ mkdir stratum-server
 cd stratum-server
 ```
 I like putting my software in `/opt`.
-3. Next, we need to pull down the code we need from UNOMP:
+3. Next, we need to pull
 ```
-git clone https://github.com/KillerByte/node-stratum-pool node_modules/stratum-pool
-npm update
-cp node_modules/stratum-pool/package.json package.json
-npm install
+git clone https://github.com/zone117x/node-stratum-pool
 ```
 4. Now that we have UNOMP's Node.js software, we need to create and configure our own Statrum Server. My example server code lives in `server.js`. From the server in `/opt/stratum-server` I do:
 ```

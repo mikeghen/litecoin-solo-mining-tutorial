@@ -8,57 +8,23 @@ var myCoin = {
   "peerMagicTestnet": "fcc1b7dc"
 };
 
-var myAuxCoins = [
-  {
-    "name": "Dogecoin",
-    "symbol": "DOGE",
-    "algorithm": "scrypt",
-    "peerMagic": "fbc0b6db",
-    "peerMagicTestnet": "fcc1b7dc",
+var myAuxCoins = [{
+  "name": "Dogecoin",
+  "symbol": "DOGE",
+  "algorithm": "scrypt",
+  "peerMagic": "fbc0b6db",
+  "peerMagicTestnet": "fcc1b7dc",
 
-      /*  */
-      "daemons": [
-          {   //Main daemon instance
-              "host": "127.0.0.1",
-              "port": 2301, // **NOT ACTUAL PORT**
-              "user": "dogecoinrpc",
-              "password": "securepasswordfordogecoinmining"
-          }
-  	],
-  },
-  {
-    "name": "Viacoin",
-    "symbol": "VIA",
-    "algorithm": "scrypt",
-    "peerMagic": "0f68c6cb",
-
-      /*  */
-      "daemons": [
-          {   //Main daemon instance
-              "host": "127.0.0.1",
-              "port": 2302,
-              "user": "viacoinrpc",
-              "password": "securepasswordforviacoinmining"
-          }
-  	],
-  },
-  {
-    "name": "Myraidcoin",
-    "symbol": "XMY",
-    "algorithm": "scrypt",
-    "peerMagic": "af4576ee",
-
-      /*  */
-      "daemons": [
-          {   //Main daemon instance
-              "host": "127.0.0.1",
-              "port": 2303,
-              "user": "myriadcoinrpc",
-              "password": "securepasswordformyriadcoinmining"
-          }
-  	],
-  }
-];
+    /*  */
+    "daemons": [
+        {   //Main daemon instance
+            "host": "127.0.0.1",
+            "port": 2301, // **NOT ACTUAL PORT**
+            "user": "dogecoinrpc",
+            "password": "securepasswordfordogecoinmining"
+        }
+	],
+}];
 
 var pool = Stratum.createPool({
 
@@ -200,12 +166,7 @@ pool.on('share', function(isValidShare, isValidBlock, data){
 // Don't store share... just log
 function storeShare(isValidShare, isValidBlock, data, coin) {
 
-    console.log('share data: ' + JSON.stringify({
-      job: data.job,
-      worker: data.worker,
-      coin: coin
-    }));
-    // TODO: Save the share
+    console.log('share data: ' + JSON.stringify(data));
 }
 
 /*

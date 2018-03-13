@@ -115,3 +115,15 @@ You will be able to import the Private WIF (which means Wallet Import Format) us
 
 ## Setup Stratum Server for Merge Mining
 You will also need a Testnet address and you will need to adjust your `server.js` file. See my example file.
+
+# Comments on Merge Mining in Production
+Currently working on getting this working in Production with:
+* Litecoin
+* Dogecoin
+* Viacoin
+* Myraidcoin
+Because these coins have stable releases. I just repeated the process above for each coin and use production configurations (remove `testnet`).
+## Considerations
+* The blockchains take a while to download
+* Needed a beefier instance (2 vCPU, 8 GB memory)
+* Need to generate wallet addresses that coininfo/coinkey NPM packages weren't capable of building, used [MichaelMure/WalletGenerator.net](https://github.com/MichaelMure/WalletGenerator.net)
