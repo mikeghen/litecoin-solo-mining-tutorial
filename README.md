@@ -145,6 +145,7 @@ I like putting my software in `/opt`.
 git clone https://github.com/zone117x/node-stratum-pool
 cp node-stratum-pool/package.json package.json
 npm install
+mv node-stratum-pool node_modules/node-stratum-pool
 ```
 4. Now that we have UNOMP's Node.js software, we need to create and configure our own Statrum Server. My example server code lives in `server.js`. From the server in `/opt/stratum-server` I do:
 ```
