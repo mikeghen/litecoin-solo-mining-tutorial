@@ -143,8 +143,7 @@ I like putting my software in `/opt`.
 3. Next, we need to get the stratum software and install it:
 ```
 git clone https://github.com/zone117x/node-stratum-pool
-npm update
-cp node_modules/stratum-pool/package.json package.json
+cp node-stratum-pool/package.json package.json
 npm install
 ```
 4. Now that we have UNOMP's Node.js software, we need to create and configure our own Statrum Server. My example server code lives in `server.js`. From the server in `/opt/stratum-server` I do:
